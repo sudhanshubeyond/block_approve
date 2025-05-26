@@ -52,11 +52,15 @@
                                 {{grade}}
                             </span>
                         </div>
-                        <div class="d-block pending">
-                            <span class="d-block font-13" style="font-weight: 500;">
-                                {{feedback}}
-                            </span>
-                        </div>
+<div class="d-inline-block pending" style="position: relative;">
+    <span class="d-block font-13 clickable-feedback" style="cursor: pointer;">
+        {{feedbackdesc}}
+    </span>
+
+    <div class="feedback-box">
+        {{feedback}}
+    </div>
+</div>
                     </div>
                     <div class="d-block action">
                          <!--<span class="mobile-block font-13 desktop-none mb-1 "> 
@@ -64,7 +68,7 @@
                         </span>-->
                         <a href="{{&gradeurl}}" class="d-flex font-13  align-items-center w-100 ">
                             <span class="accent-blue font-w-600">
-                                Approve
+                                Review
                                 <i class="fa fa-angle-right ml-1 font-w-600" style="color: #006fcb !important"></i>
                             </span>
                         </a>
@@ -79,3 +83,21 @@
         </div>
     {{/allreviewsurl}}
 </div>
+
+{{#js}}
+document.querySelectorAll('.clickable-feedback').forEach(trigger => {
+    const box = trigger.nextElementSibling;
+
+    trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        box.style.display = box.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+        if (!box.contains(e.target) && e.target !== trigger) {
+            box.style.display = 'none';
+        }
+    });
+});
+{{/js}}

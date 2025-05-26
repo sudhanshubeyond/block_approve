@@ -4,12 +4,12 @@
                     <span class="d-flex justify-content-start align-items-center"> 
                         <span class="d-inline-block font-12 black-light-color font-w-600" style="margin-left: 3.5px;">{{to_reviews}}</span>
                     </span>
-                    <a class="accent-blue font-13" style="font-weight: 600;" id="download" href="{{&downloadurl}}"> <img src="pix/download-bold.svg" alt="" class="mr-2">Download CSV </a>
+                  <!--  <a class="accent-blue font-13" style="font-weight: 600;" id="download" href="{{&downloadurl}}"> <img src="pix/download-bold.svg" alt="" class="mr-2">Download CSV </a> -->
                 </div>
                 <ul class="all-to-review-ul" id="">
                     <li class="all-to-review-header">
                         <span class="d-inline-block activity">Activity</span>
-                        <span class="d-inline-block submiss"> Student </span>
+                        <span class="d-inline-block submiss"> Student Name </span>
                         <div class="submiss-review">
                             <span class="d-inline-block pending">Grade(AI)</span>
                             <span class="d-inline-block pending">Feedback(AI)</span>
@@ -35,14 +35,20 @@
                                 <div class="d-inline-block submiss">
                                     <span class="d-block font-13">{{grade}}</span>
                                 </div>
-                                <div class="d-inline-block pending">
-                                    <span class="d-block font-13">{{feedback}}</span>
-                                </div>
+<div class="d-inline-block pending" style="position: relative;">
+    <span class="d-block font-13 clickable-feedback" style="cursor: pointer;">
+        {{feedbackdesc}}
+    </span>
+
+    <div class="feedback-box">
+        {{feedback}}
+    </div>
+</div>
                             </div>
                             <div class="d-inline-block action">
                                 <!--<span class="desktop-none mb-2  mobile-block font-14 black-light-color">Action</span>-->
                                 <a href="{{&gradeurl}}" class="d-flex align-items-center w-100 ">
-                                    <span class="d-block font-12 text-right accent-blue font-w-600">Review/Approve 
+                                    <span class="d-block font-12 text-right accent-blue font-w-600">Review 
 
                                     </span>
                                     <i class="fa fa-angle-right ml-1 d-inline-block font-13 font-weignt-bolder" style="color: #006fcb !important;"></i>
@@ -52,3 +58,21 @@
                     {{/activity}}
                 </ul>
         </section>
+
+{{#js}}
+document.querySelectorAll('.clickable-feedback').forEach(trigger => {
+    const box = trigger.nextElementSibling;
+
+    trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        box.style.display = box.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+        if (!box.contains(e.target) && e.target !== trigger) {
+            box.style.display = 'none';
+        }
+    });
+});
+{{/js}}

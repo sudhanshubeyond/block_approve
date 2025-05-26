@@ -41,7 +41,7 @@ class vlearn_reviews {
         $params = array();
 //        if (is_siteadmin() || has_capability("block/calendar_month:view_todaysclasses", $context)) {
             $sql = "Select gr.*, c.fullname as coursename, a.name as activityname from {assign_graderesponse} gr left join {course} c on c.id = gr.courseid"
-                    . " left join {assign} a on a.id = gr.assignmentid" . $where;
+                    . " left join {assign} a on a.id = gr.assignmentid where gr.grade != ''" . $where;
             $sortsql = " ORDER by $sort";
             $assignments = $DB->get_records_sql($sql.$sortsql, $params, ($page * $perpage), $perpage);
 //        } else {
