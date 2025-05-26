@@ -1,0 +1,426 @@
+.block_vlearn_reviews > .card-block {
+  max-height: unset !important;
+  border: 1px solid #e7e7e7;
+}
+
+.pagelayout-mydashboard
+  #page-wrapper
+  #page-content
+  .block_vlearn_reviews
+  > .card-block
+  > h3,
+.all-toreview-fullview-page h2 {
+  font-size: 16px !important;
+  line-height: 27px !important;
+  font-weight: 700 !important;
+  color: #686868 !important;
+  text-transform: capitalize !important;
+}
+
+.dark-theme.pagelayout-mydashboard
+  #page-wrapper
+  #page-content
+  .block_vlearn_reviews
+  > .card-block
+  > h3,
+.dark-theme .all-toreview-fullview-page h2 {
+  color: #898989 !important;
+}
+.dark-theme
+  .toreview-completion-section
+  ul.border-bottom.justify-content-start {
+  border-bottom: 1px solid #292929 !important;
+}
+.assignment-header {
+  padding: 8px 8px;
+  background: #fafbfc;
+}
+
+.dark-theme .assignment-header {
+  border-bottom: 1px solid #292929;
+  background-color: #292929 !important;
+  color: #bfbfbf;
+}
+
+.assignment-detail-content .activity {
+  width: 51%;
+  padding-right: 20px;
+}
+
+.submiss-review {
+  display: flex;
+  flex-direction: row;
+  width: 35%;
+}
+
+.assignment-detail-content .submiss,
+.quiz-listing .submiss {
+  width: 49%;
+}
+
+.assignment-detail-content .pending,
+.quiz-listing .pending {
+  width: 51%;
+}
+
+.assignment-detail-content .action,
+.quiz-listing .action {
+  width: 14%;
+}
+
+.assignment-listing {
+  padding: 10px 8px;
+}
+
+.assignment-listing:hover {
+  background-color: #fafbfc;
+}
+
+.dark-theme .assignment-listing {
+  border-bottom: 1px solid #292929 !important;
+}
+
+.dark-theme .assignment-listing:hover {
+  background-color: #212121;
+}
+
+.block_vlearn_reviews .view-all {
+  padding-top: 16px;
+}
+
+/* 
+.nav-t {
+    margin-bottom: 1.25rem;
+    margin-left: 0;
+    list-style: none;
+}
+
+.nav-t>li>a {
+    display: block;
+}
+
+.nav-tabs {
+    *zoom: 1;
+}
+
+.nav-tabs:before, .nav-tabs:after {
+    display: table;
+    content: "";
+}
+
+.nav-tabs:after {
+    clear: both;
+}
+
+.nav-tabs>li {
+    float: left;
+}
+
+.nav-tabs>li>a {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-right: 0.1rem;
+    line-height: 1rem;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #999;
+}
+
+.nav-tabs>li {
+    margin-bottom: -1px;
+}
+
+.nav-tabs>li>a {
+    padding: 8px;
+    line-height: 1.25rem;
+    border-bottom: 2px solid transparent;
+    color: #686868;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav-tabs>li>a:hover, .nav-tabs>li>a:focus {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0A85FF;
+}
+
+.nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus {
+    cursor: pointer;
+    background-color: #ffffff;
+    border-bottom: 2px solid #0A85FF;
+    color: #0A85FF;
+}
+
+.tab-content.active {
+    display: block !important;
+}
+
+.tab-content.hide {
+    display: none;
+} */
+.toreview-tab {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: transparent;
+  border-bottom: 3px solid #0a85ff;
+}
+
+.toreview-tab a {
+  color: #0a85ff;
+  padding-bottom: 6px;
+}
+
+.toreview-tab a:hover {
+  color: #005aa3;
+}
+
+/* ************** full view page of Review  */
+.all-toreview-fullview-page {
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.all-to-review-header {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #e8e9ea;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  padding: 10px 13px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.all-to-review-ul .activity {
+  text-align: left;
+  width: 60%;
+  padding-right: 30px;
+}
+
+.all-to-review-ul .submiss {
+  width: 51%;
+}
+
+.all-to-review-ul .pending {
+  width: 49%;
+}
+
+.all-to-review-ul .action {
+  width: 13%;
+}
+
+.all-to-review-ul .all-to-review-list {
+  background-color: #fff;
+  border-bottom: 1px solid #e8e9ea;
+  font-weight: 500;
+  padding: 16px 13px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.all-to-review-ul .all-to-review-list:hover {
+  background-color: #f7f9fa;
+}
+
+#page-blocks-vlearn_program-programview.pagelayout-programpage #region-main-box,
+body:not(
+    .uses-drawers
+  ).drawer-open-left.pagelayout-programpage#page-blocks-vlearn_program-allprograms
+  #region-main-box {
+  padding: 0 3rem !important;
+}
+body:not(
+    .uses-drawers
+  ).drawer-open-left.pagelayout-programpage#page-blocks-vlearn_program-programview,
+body:not(
+    .uses-drawers
+  ).drawer-open-left.pagelayout-programpage#page-blocks-vlearn_program-allprograms {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 767px) {
+  body:not(
+      .uses-drawers
+    ).drawer-open-left.pagelayout-programpage#page-blocks-vlearn_program-allprograms
+    #region-main-box {
+    padding: 0 8px !important;
+  }
+  #page-blocks-vlearn_program-allprograms #page-wrapper #page:not(.drawers) {
+    flex: auto;
+  }
+  .block_vlearn_reviews .toreview-completion-section .nav-tabs {
+    background-color: #fff;
+    padding-bottom: 0;
+  }
+
+  .activites-ul {
+    margin-top: 12px;
+  }
+
+  .block_vlearn_reviews .assignment-header,
+  .all-to-review-header {
+    display: none !important;
+  }
+
+  .block_vlearn_reviews .assignment-listing,
+  .all-to-review-list {
+    padding: 10px 0 !important;
+    display: block !important;
+  }
+
+  .assignment-detail-content .activity,
+  .quiz-listing .activity,
+  .all-to-review-list .activity {
+    width: 100%;
+    padding-right: 8px;
+  }
+
+  .assignment-detail-content .submiss-review,
+  .all-to-review-list .submiss-review {
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  .assignment-detail-content .submiss,
+  .all-to-review-list .submiss {
+    width: 50%;
+  }
+
+  .assignment-detail-content .pending,
+  .all-to-review-list .pending {
+    width: 50%;
+  }
+
+  .assignment-detail-content .action,
+  .all-to-review-list .action {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .assignment-detail-content .action > a,
+  .all-to-review-list .action > a > span,
+  .all-to-review-list .action > a {
+    font-size: 14px !important;
+  }
+
+  /* full view */
+  .all-toreview-fullview-page {
+    padding: 14px;
+  }
+
+  .serch-input-box {
+    order: 2;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+}
+
+@media screen and (max-width: 550px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 900px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 900px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
+
+#page-blocks-vlearn_reviews-allreviews thead {
+  background-color: #eff3f9 !important;
+  color: #7c8ba2 !important;
+}
+
+#page-blocks-vlearn_reviews-allreviews h2 {
+  color: #333b48 !important;
+}
+
+#page-blocks-vlearn_reviews-allreviews .table th,
+.table td {
+  vertical-align: middle !important;
+}
+
+#page-blocks-vlearn_reviews-allreviews .custom-select {
+  color: var(--light-text-color-tertiary, #5a5f66);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  width: 140px;
+}
+
+#page-blocks-vlearn_reviews-allreviews tr:hover {
+  background-color: #f9fbff;
+}
+
+#page-blocks-vlearn_reviews-allreviews .filter-text {
+  color: var(--color-text-primary, #333b48);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.custom-up {
+  transform: rotate(180deg);
+}
+.grade-redirection {
+  appearance: none;
+  text-decoration: none;
+}
+.all-review-faculty {
+  padding: 20px;
+}
+
+.review-faculty-modal{
+  width:90vw !important;
+  max-width: 90vw !important;
+}
+@media screen and (max-width: 768px) {
+  .review-faculty-modal{
+    width: 90vw !important;
+  }
+}
+
+.all-review-faculty tr td:nth-child(1){
+ padding-left:20px; 
+}
+
+.assignment-approval-table tr td:nth-child(1){
+    max-width: 350px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+
+
+.assignment-approval-table tr td:nth-child(9){
+    max-width: 350px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}

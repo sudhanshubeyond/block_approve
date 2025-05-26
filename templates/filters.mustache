@@ -1,0 +1,44 @@
+{{!
+Mustache for reviews
+@author: Sudhanshu Gupta.
+}}
+{{! <div class="program-filter justify-content-between align-items-center mb-3 mt-4 ">
+   <div class="input-group col-sm-6 col-12 col-md-6 px-0 serch-input-box">
+        <i class="fa fa-search" style="color: #686868 !important;"></i>
+        <input type="text" class="form-control activity-search" placeholder="Search Activity">
+       </div>
+   </div>
+}}
+<div class="d-flex justify-content-end pb-3">
+   <div class="d-flex-inline">
+      <span class="filter-text mr-1"> Filter </span>
+      <div class="btn-group">
+         <select class="custom-select border rounded-pill batchsearch" id="batchsearch_id">
+            <option selected>Batch</option>
+                    {{#batch}}
+                    <option value="{{value}}">{{name}}</option>
+                    {{/batch}}
+         </select>
+      </div>
+      <div class="btn-group">
+         <select class="custom-select border rounded-pill coursesearch" id="coursesearch_id">
+            <option selected>Course</option>
+                    {{#courses}}
+                    <option value="{{value}}">{{name}}</option>
+                    {{/courses}}
+         </select>
+      </div>
+      <div class="btn-group">
+         <select class="custom-select border rounded-pill assigntype" id="assigntype_id">
+            <option selected>Classification</option>
+            <option value="1">Mandatory</option>
+            <option value="2">Practice</option>
+         </select>
+      </div>
+   </div>
+</div>
+{{#js}}
+    require(['block_vlearn_reviews/reviewslist'], function(reviewslist) {
+    reviewslist.reviews();
+    });
+{{/js}}

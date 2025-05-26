@@ -1,0 +1,54 @@
+       <div
+              class='modal fade'
+              id='exampleModal'
+              tabindex='-1'
+              role='dialog'
+              aria-labelledby='exampleModalLabel'
+              aria-hidden='true'
+            >
+              <div class='modal-dialog review-faculty-modal' role='document'>
+                <div class='modal-content'>
+                  <div class='modal-header'>
+                    <h5 class='modal-title' id='exampleModalLabel'>
+                      Assignment Submission
+                    </h5>
+                    <button
+                      type='button'
+                      class='close'
+                      data-dismiss='modal'
+                      aria-label='Close'
+                    >
+                      <span aria-hidden='true'>&times;</span>
+                    </button>
+                  </div>
+                        <div class='table-responsive'>
+                          <table class='table profile-approval all-review-faculty'>
+                            <thead class='thead'>
+                              <tr style='white-space: nowrap'>
+                                <th scope='col' style='padding-left:20px'>Name</th>
+                                <th scope='col'>Email</th>
+                                <th scope='col'>Due Date</th>
+                                <th scope='col'>Status</th>
+                                <th scope='col'></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            {{#learner}}
+                            <tr>
+                            <td>{{fullname}}</td>
+                            <td>{{email}}</td>
+                            <td>{{gradingduedate}}</td>
+                            <td>
+                            <p>Submitted for grading</p>
+                            {{#userextensiondate}}
+                            <p>{{userextensiondate}}</p>
+                            {{/userextensiondate}}
+                            </td>
+                            <td><a class='grade-redirection btn btn-secondary' href={{gradingurl}} target="_blank">Grade</a></td>
+                            </tr>
+                            {{/learner}}
+                            </tbody>
+                          </table>
+                        </div>
+                </div>
+              </div>

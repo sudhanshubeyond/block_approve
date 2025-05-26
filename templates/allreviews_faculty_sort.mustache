@@ -1,0 +1,41 @@
+
+        {{#activity}}
+         <tr style="white-space: nowrap">
+            <td title="{{&name}}">{{&name}}</td>
+            <td>
+            {{#assigntype}}
+             <button type="button" class="btn btn-outline-light d-flex align-items-center text-dark" style="border: 1px solid #E7E7E7;"><i class="fa fa-circle pr-2" aria-hidden="true" style="color: #5095FC"></i>Mandatory</button>
+            {{/assigntype}}
+           {{^assigntype}}
+            <button type="button" class="btn btn-outline-light d-flex align-items-center text-dark" style="border: 1px solid #E7E7E7;"><i class="fa fa-circle pr-2" aria-hidden="true" style="color: #E5EBF4"></i>Practice</button>
+            {{/assigntype}}
+            </td>
+            <td>{{submit}}</td>
+            <td  class="text-danger font-weight-bold">{{review}}</td>
+            <td class="text-success font-weight-bold">{{completedreview}}</td>
+            <td>  
+               <button type="button" class="btn btn-secondary"   data-id="{{instance}}" data-programid="{{programid}}" cmid="{{cmid}}" data-target="#grade" id="grade_popup" {{pendingclass}}>Grade</button>
+                <a class='grade-redirection btn btn-secondary' href={{gradeurl}} target="_blank">View All Submission</a>
+            </td>
+            <td>
+               {{#gradingduedate}}
+               <div class="d-flex border rounded-lg p-2">
+                  <img src="pix/timer.svg" alt="timer" width=""  class="d-inline-block mr-1" />
+                  <div class="d-flex-inline">
+                     <div>{{gradingduedate}}<br>
+                        <span style="white-space: nowrap">at {{gradingduetime}} hours</span>
+                     </div>
+                  </div>
+               </div>
+             {{/gradingduedate}}
+             {{^gradingduedate}} {{gradingduedateempty}} {{/gradingduedate}}
+            </td>
+             <td class="font-weight-bold {{^daystyle}} text-danger {{/daystyle}} {{remaining_text}}" {{{daystyle}}}>
+              {{#gradingduedate}}{{remaningdays}}
+              {{/gradingduedate}}
+              {{^gradingduedate}} {{gradingduedateempty}} {{/gradingduedate}}
+            </td>
+            <td title="{{&program_name}}">{{&program_name}}</td>
+            <td>{{&course_name}}</td>
+         </tr>
+        {{/activity}}

@@ -1,0 +1,81 @@
+<div class="toreview-completion-section" id="learner-completion-section-1"  >
+    <ul class="border-bottom mx-0 mb-1 d-flex justify-content-start  ">
+        <li class="d-inline-block  pr-3 toreview-tab ">
+            <a href="#tab1" class="d-inline-block">
+                <img src="pix/assignemnt-accent-blue.svg" alt="" width=""  class="d-inline-block mr-1" />
+                    Assignments
+                <span>({{to_reviews}})</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="assignment-detail-content">
+        <ul class="m-0 p-0 assignment  " >
+            <li class="assignment-header d-flex align-items-center w-100">
+                <span class="d-block font-14  activity black-base" >
+                    Activity details
+                </span>
+                <div class="submiss-review">
+                    <span class="d-block font-14  submiss black-base">
+                        Student
+                    </span>
+                    <span class="d-block font-14  submiss black-base">
+                        Grade(AI)
+                    </span>
+                    <span class="d-block font-14  pending black-base">
+                        Feedback(AI)
+                    </span>
+                </div>
+
+                <span class="d-block font-14  action black-base">
+                    Action
+                </span>
+            </li>
+            {{#activity}}
+                <li class="assignment-listing border-bottom d-flex align-items-center w-100">
+
+                    <div class="d-block activity">
+                        <div class="font-12 black-light-color">
+                            <span class="d-inline-block"> {{course_name}}</span>
+                        </div>
+                        <h6 class="d-inline-block font-13 font-w-600 quiz-trainer-accent-blue mb-0 black-base mt-1">{{name}}</h6>
+                    </div>
+
+                    <div class="submiss-review">
+                        <div class="d-block  submiss">
+                            <span class="d-block font-13" style="font-weight:500">
+                                {{studentname}}
+                            </span>
+                        </div>
+                        <div class="d-block  submiss">
+                            <span class="d-block font-13" style="font-weight:500">
+                                {{grade}}
+                            </span>
+                        </div>
+                        <div class="d-block pending">
+                            <span class="d-block font-13" style="font-weight: 500;">
+                                {{feedback}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="d-block action">
+                         <!--<span class="mobile-block font-13 desktop-none mb-1 "> 
+                            Action
+                        </span>-->
+                        <a href="{{&gradeurl}}" class="d-flex font-13  align-items-center w-100 ">
+                            <span class="accent-blue font-w-600">
+                                Approve
+                                <i class="fa fa-angle-right ml-1 font-w-600" style="color: #006fcb !important"></i>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+            {{/activity}}
+        </ul>
+    </div>
+    {{#allreviewsurl}}
+        <div class="text-center w-100 ">
+            <a class="font-w-600 view-all d-block font-14" href="{{allreviewsurl}}">View all</a>
+        </div>
+    {{/allreviewsurl}}
+</div>
