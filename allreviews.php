@@ -120,8 +120,8 @@ foreach ($reviews as $key => $activity) {
     $data['activity'][$i]['grade'] = $activity->grade;
     $data['activity'][$i]['feedback'] = $activity->feedbackdesc;
     $data['activity'][$i]['feedbackdesc'] = strlen($activity->feedbackdesc < 10)? substr($activity->feedbackdesc, 0, 10)."..." : $activity->feedbackdesc;
-    $grade_params = array('id' => $activity->id, 'action' => 'grading');
-    $data['activity'][$i]['gradeurl'] = "#";// new \moodle_url('/mod/assign/view.php', $grade_params);
+    $grade_params = array('id' => $activity->cmid, 'action' => 'grader','userid'=>$activity->userid);
+    $data['activity'][$i]['gradeurl'] =  new \moodle_url('/mod/assign/view.php', $grade_params);
     $i++;
 }
 

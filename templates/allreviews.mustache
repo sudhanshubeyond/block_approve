@@ -1,63 +1,51 @@
-        <section class="program-allacctivites-detail">
-            <!-- All Activities Section-->
-                <div class="d-flex justify-content-between align-items-center w-100 count-download-box">
-                    <span class="d-flex justify-content-start align-items-center"> 
-                        <span class="d-inline-block font-12 black-light-color font-w-600" style="margin-left: 3.5px;">{{to_reviews}}</span>
-                    </span>
-                  <!--  <a class="accent-blue font-13" style="font-weight: 600;" id="download" href="{{&downloadurl}}"> <img src="pix/download-bold.svg" alt="" class="mr-2">Download CSV </a> -->
-                </div>
-                <ul class="all-to-review-ul" id="">
-                    <li class="all-to-review-header">
-                        <span class="d-inline-block activity">Activity</span>
-                        <span class="d-inline-block submiss"> Student Name </span>
-                        <div class="submiss-review">
-                            <span class="d-inline-block pending">Grade(AI)</span>
-                            <span class="d-inline-block pending">Feedback(AI)</span>
-                        </div>
+<div class="activity-table">
+   <table> <tbody>
+        <tr>
+            <th width="250">Activity</th>
+            <th>Student Name</th>
+            <th>Grade(AI)</th>
+            <th>Feedback(Ai)</th>
+            <th>Action</th>
+        </tr>
 
-                        <span class="d-inline-block action ">Action</span>
-                    </li>
-                    {{#activity}}
-                        <li class=" all-to-review-list">
-                            <div class="d-inline-block activity">
-                                <div class="font-12 black-light-color">
-                                    <i class="fa fa-angle-right ml-1 mr-1 d-inline-block" style="color: #484848 !important;"></i>
-                                    <span class="d-inline-block"> {{&course_name}}</span>
-                                </div>
-                                <div class="font-14 solid-blck">
-                                    <span class="font-w-600 font-13 d-block">{{&name}}</span>
-                                </div>
-                            </div>
-                                <div class="d-inline-block submiss">
-                                    <span class="d-block font-13">{{studentname}}</span>
-                                </div>
-                            <div class="submiss-review">
-                                <div class="d-inline-block submiss">
-                                    <span class="d-block font-13">{{grade}}</span>
-                                </div>
-<div class="d-inline-block pending" style="position: relative;">
-    <span class="d-block font-13 clickable-feedback" style="cursor: pointer;">
+{{#activity}}
+        <tr class="all-to-review-list" >
+
+
+            <td>
+                <h5>{{&course_name}}</h5>
+                <p>{{&name}}</p>
+            </td>
+            <td>{{studentname}}</td>
+            <td class="text-center">{{grade}}</td>
+            <td >
+                <div class="d-inline-block pending" style="position: relative;" >
+                    <span class="d-block font-13 clickable-feedback" style="cursor: pointer;" >
         {{feedbackdesc}}
     </span>
 
-    <div class="feedback-box">
-        {{feedback}}
-    </div>
+                    <div class="feedback-box" style="display: none;">
+{{feedback}}
 </div>
-                            </div>
-                            <div class="d-inline-block action">
-                                <!--<span class="desktop-none mb-2  mobile-block font-14 black-light-color">Action</span>-->
-                                <a href="{{&gradeurl}}" class="d-flex align-items-center w-100 ">
-                                    <span class="d-block font-12 text-right accent-blue font-w-600">Approve 
+                </div>
+            </td>
+            <td >
+                <div class="d-inline-block action" >
+                    <!--<span class="desktop-none mb-2  mobile-block font-14 black-light-color">Action</span>-->
+                    <a href={{&gradeurl}} class="d-flex align-items-center w-100 " >
+                        <span class="d-block font-12 text-right accent-blue font-w-600" >Approve 
 
                                     </span>
-                                    <i class="fa fa-angle-right ml-1 d-inline-block font-13 font-weignt-bolder" style="color: #006fcb !important;"></i>
-                                </a>
-                            </div>
-                        </li>
-                    {{/activity}}
-                </ul>
-        </section>
+                        <i class="fa fa-angle-right ml-1 d-inline-block font-13 font-weignt-bolder" style="color: #006fcb !important;"></i>
+                    </a>
+                </div>
+            </td>
+        </tr>
+{{/activity}}
+		
+    </tbody>
+    </table>
+</div>
 
 {{#js}}
 document.querySelectorAll('.clickable-feedback').forEach(trigger => {
