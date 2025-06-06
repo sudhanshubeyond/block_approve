@@ -96,7 +96,7 @@ $output .= html_writer::end_div();
 //$output .= html_writer::end_div();
 echo $output;
 $type = 'custom-allreviews';
-$PAGE->requires->js_call_amd('block_content_approval/cleavertab_data', 'init', array(SITEID, $type));
+//$PAGE->requires->js_call_amd('block_content_approval/cleavertab_data', 'init', array(SITEID, $type));
 echo "</div>";
 echo $OUTPUT->footer();
 

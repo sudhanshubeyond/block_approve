@@ -17,40 +17,19 @@ define([
         e.preventDefault();
         var page_val = $(this).attr("href");
         var page = getURLParameter("page", page_val);
-//        var activityname = $(".activity-search").val();
-//        var programid = $("#batchsearch_id").find(":selected").val();
-//        var courseid = $("#coursesearch_id").find(":selected").val();
-//        var assigntype = $("#assigntype_id").find(":selected").val();
-//        var state = $(".down-arrow").attr("val");
-//        if (programid === "Batch") {
-//          programid = "";
-//        }
-//        if (courseid === "Course") {
-//          courseid = "";
-//        }
-//        if (assigntype === "Classification") {
-//          assigntype = "";
-//        }
         if (page) {
-          var WAITICON = {
-            pix: M.util.image_url("i/loading", "core"),
-            component: "moodle",
-          };
-          var loader = $('<img style="display: block;margin: 100px auto" />')
-            .attr("src", M.util.image_url(WAITICON.pix, WAITICON.component))
+        var loader = $('<img style="display: block; margin-left: 750px;" />')
+            .attr("src", M.util.image_url("i/loading", "core"))
             .addClass("spinner");
-          $(".sorted_data").html(
+          $(".allreviews-display").html(
             '<tr> <td colspan="8">' + loader.get(0).outerHTML + "</td></tr>"
           );
           var promises = ajax.call([
             {
               methodname: "block_vlearn_reviews_get_reviews",
               args: {
-//                program: programid,
-//                cid: courseid,
-//                type: assigntype,
+
                 page: page
-//                duesorting: state,
               },
             },
           ]);

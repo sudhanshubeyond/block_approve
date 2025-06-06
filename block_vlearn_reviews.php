@@ -90,7 +90,7 @@ class block_vlearn_reviews extends block_base {
             }
              $text .= $OUTPUT->render_from_template('block_vlearn_reviews/reviews', $data);
             $type= '';
-            $PAGE->requires->js_call_amd('block_content_approval/cleavertab_data', 'init', array(SITEID, $type));
+//            $PAGE->requires->js_call_amd('block_content_approval/cleavertab_data', 'init', array(SITEID, $type));
             $this->content->text = $text;
             if (true) {
                 //create trainer profile on clevertab
