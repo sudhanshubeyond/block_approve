@@ -16,22 +16,21 @@ define([
       $(document).on("click", ".page-link", function (e) {
         e.preventDefault();
         var page_val = $(this).attr("href");
-        //                        var activityname = $('.activity-search').val();
         var page = getURLParameter("page", page_val);
-        var activityname = $(".activity-search").val();
-        var programid = $("#batchsearch_id").find(":selected").val();
-        var courseid = $("#coursesearch_id").find(":selected").val();
-        var assigntype = $("#assigntype_id").find(":selected").val();
-        var state = $(".down-arrow").attr("val");
-        if (programid === "Batch") {
-          programid = "";
-        }
-        if (courseid === "Course") {
-          courseid = "";
-        }
-        if (assigntype === "Classification") {
-          assigntype = "";
-        }
+//        var activityname = $(".activity-search").val();
+//        var programid = $("#batchsearch_id").find(":selected").val();
+//        var courseid = $("#coursesearch_id").find(":selected").val();
+//        var assigntype = $("#assigntype_id").find(":selected").val();
+//        var state = $(".down-arrow").attr("val");
+//        if (programid === "Batch") {
+//          programid = "";
+//        }
+//        if (courseid === "Course") {
+//          courseid = "";
+//        }
+//        if (assigntype === "Classification") {
+//          assigntype = "";
+//        }
         if (page) {
           var WAITICON = {
             pix: M.util.image_url("i/loading", "core"),
@@ -47,18 +46,18 @@ define([
             {
               methodname: "block_vlearn_reviews_get_reviews",
               args: {
-                program: programid,
-                cid: courseid,
-                type: assigntype,
-                page: page,
-                duesorting: state,
+//                program: programid,
+//                cid: courseid,
+//                type: assigntype,
+                page: page
+//                duesorting: state,
               },
             },
           ]);
           promises[0]
             .done(function (data) {
-              $(".sorted_data").html(data.displayhtml);
-              $(".pagination-nav-filter").html(data.pagedata);
+              $(".allreviews-display").html(data.displayhtml);
+//              $(".pagination-nav-filter").html(data.pagedata);
             })
             .fail(notification.exception);
         } else {

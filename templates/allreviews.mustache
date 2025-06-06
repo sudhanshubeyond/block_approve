@@ -63,4 +63,8 @@ document.querySelectorAll('.clickable-feedback').forEach(trigger => {
         }
     });
 });
+
+    require(['block_vlearn_reviews/reviewslist'], function(reviewslist) {
+    reviewslist.reviews();
+    });
 {{/js}}
