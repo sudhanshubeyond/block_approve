@@ -1,5 +1,5 @@
 <div class="activity-table">
-   <table> <tbody>
+   <table> 
         <tr>
             <th width="250">Activity</th>
             <th>Student Name</th>
@@ -24,7 +24,7 @@
         {{&feedback}}
     </span>
 
-                    <div class="feedback-box" style="display: none;">
+                    <div class="feedback-box">
 {{&feedbackdesc}}
 </div>
                 </div>
@@ -43,26 +43,10 @@
         </tr>
 {{/activity}}
 		
-    </tbody>
     </table>
 </div>
 
 {{#js}}
-document.querySelectorAll('.clickable-feedback').forEach(trigger => {
-    const box = trigger.nextElementSibling;
-
-    trigger.addEventListener('click', (e) => {
-        e.stopPropagation();
-        box.style.display = box.style.display === 'block' ? 'none' : 'block';
-    });
-
-    // Close on outside click
-    document.addEventListener('click', (e) => {
-        if (!box.contains(e.target) && e.target !== trigger) {
-            box.style.display = 'none';
-        }
-    });
-});
 
     require(['block_vlearn_reviews/reviewslist'], function(reviewslist) {
     reviewslist.reviews();
