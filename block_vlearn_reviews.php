@@ -88,30 +88,11 @@ class block_vlearn_reviews extends block_base {
             if (count($reviews) >= 1) {
             $data['allreviewsurl'] = $CFG->wwwroot.'/blocks/vlearn_reviews/allreviews.php';
             }
+//            if (is_siteadmin() || has_capability("block/vlearn_reviews:viewinstance", $this->context)){
              $text .= $OUTPUT->render_from_template('block_vlearn_reviews/reviews', $data);
-            $type= '';
-//            $PAGE->requires->js_call_amd('block_content_approval/cleavertab_data', 'init', array(SITEID, $type));
+//            }
+
             $this->content->text = $text;
-            if (true) {
-                //create trainer profile on clevertab
-                $data = [];
-                $data['identity'] = $USER->email;
-                $data['type'] = "profile";
-                $data['profileData'] = array('Name' => fullname($USER), 'First Name' => $USER->firstname, 'Last Name' => $USER->lastname,
-                     'Email' => $USER->email, 'Phone' => $USER->phone1, 'Role' => 'Trainer');
-                $clevertapevent = new \stdClass();
-                $clevertapevent->d = [$data];
-//                $res = post_clevertap_event($clevertapevent);
-                
-                $data = [];
-                $data['identity'] = $USER->email;
-                $data['type'] = "event";
-                $data['evtName'] = "Page_Activity";
-                $data['evtData'] = array('Name_of_page' => 'Faculty_Dashboard', 'Application' => 'Moodle', 'View_Time' => date("d/m/Y h:i a", time()),'LP_Name' => 'NA');
-                $clevertapevent = new \stdClass();
-                $clevertapevent->d = [$data];
-//                post_clevertap_event($clevertapevent);
-            }
         }
 
         return $this->content;

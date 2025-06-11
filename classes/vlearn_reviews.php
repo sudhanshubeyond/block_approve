@@ -39,27 +39,21 @@ class vlearn_reviews {
     public function get_program_reviews($page = 0, $perpage = 0, $where = null, $sort = ' id ASC') {
         global $DB, $USER;
         $params = array();
-//        if (is_siteadmin() || has_capability("block/calendar_month:view_todaysclasses", $context)) {
+        if (is_siteadmin() ) {
             $sql = "Select gr.*, c.fullname as coursename, a.name as activityname from {assign_graderesponse} gr left join {course} c on c.id = gr.courseid"
-                    . " left join {assign} a on a.id = gr.assignmentid where gr.grade != ''" . $where;
-            $sortsql = " ORDER by $sort";
-            $assignments = $DB->get_records_sql($sql.$sortsql, $params, ($page * $perpage), $perpage);
-//        } else {
-//            $params['userid'] = $USER->id;
-//            $params['ttuserid'] = $USER->id;
-//            $sql = "Select cm.id, lp.name as programname, lp.id as programid, c.fullname as coursename,cm.section, cm.course, cm.instance, a.name as activityname, a.gradingduedate ,"
-//                    . "  a.duedate, a.id as assignid, gi.gradepass  from {learningpaths} as lp left join {learningpath_courses} as lpc on lp.id = lpc.learningpathid left join {course} as c "
-//                    . "on c.id = lpc.courseid left join {course_modules} as cm on cm.course = c.id left join {trainer_tagging} tt ON tt.cmid = cm.id  "
-//                    . " left join {modules} as m on m.id = cm.module "
-//                    . " left join {assign} as a on a.id = cm.instance "
-//                    . " left join {grade_items} gi  on gi.iteminstance = cm.instance "
-//                    . " LEFT JOIN {custom_role_mapping} crm  ON crm.programid= lp.id "
-//                    . " where lp.companyid = $companyid"
-//                    . " and cm.visible =1 and lpc.course_active = 1 and cm.deletioninprogress = 0 and m.name='assign' and tt.userid = :ttuserid "
-//                    . " and lp.deleted = 0 and gi.itemmodule='assign' and a.allowsubmissionsfromdate < $time and crm.userid=:userid " . $where . " group by cm.id";
-//            $sortsql = " ORDER by $sort";
-//            $assignments = $DB->get_records_sql($sql.$sortsql, $params, ($page * $perpage), $perpage);
-//        }
+                    . " left join {assign} a on a.id = gr.assignmentid where gr.isdeleted = 0 and gr.grade != ''" . $where;
+        } elseif (has_capability("block/vlearn_reviews:viewinstance", $this->context)){
+            $params['userid'] = $USER->id;
+            $sql = "SELECT gr.*,c.fullname AS coursename,a.name AS activityname FROM {assign_graderesponse} gr
+                       LEFT JOIN  {course} c ON c.id = gr.courseid LEFT JOIN {assign} a ON a.id = gr.assignmentid JOIN 
+                       {enrol} e ON e.courseid = gr.courseid JOIN {user_enrolments} ue ON ue.enrolid = e.id AND ue.userid = :userid
+                         where gr.isdeleted = 0 and gr.grade != '' " . $where;
+        }else{
+            return [];
+        }
+
+        $sortsql = " ORDER by $sort";
+        $assignments = $DB->get_records_sql($sql . $sortsql, $params, ($page * $perpage), $perpage);
         return $assignments;
     }
 
