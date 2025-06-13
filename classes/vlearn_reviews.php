@@ -42,14 +42,12 @@ class vlearn_reviews {
         if (is_siteadmin() ) {
             $sql = "Select gr.*, c.fullname as coursename, a.name as activityname from {assign_graderesponse} gr left join {course} c on c.id = gr.courseid"
                     . " left join {assign} a on a.id = gr.assignmentid where gr.isdeleted = 0 and gr.grade != ''" . $where;
-        } elseif (has_capability("block/vlearn_reviews:viewinstance", $this->context)){
+        } else{
             $params['userid'] = $USER->id;
             $sql = "SELECT gr.*,c.fullname AS coursename,a.name AS activityname FROM {assign_graderesponse} gr
                        LEFT JOIN  {course} c ON c.id = gr.courseid LEFT JOIN {assign} a ON a.id = gr.assignmentid JOIN 
                        {enrol} e ON e.courseid = gr.courseid JOIN {user_enrolments} ue ON ue.enrolid = e.id AND ue.userid = :userid
                          where gr.isdeleted = 0 and gr.grade != '' " . $where;
-        }else{
-            return [];
         }
 
         $sortsql = " ORDER by $sort";

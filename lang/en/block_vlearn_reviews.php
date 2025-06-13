@@ -25,7 +25,7 @@
  */
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'To  Approve';
+$string['pluginname'] = 'AI Grading Assignment Review';
 $string['blocktitle'] = 'Title';
 $string['coursename'] = 'Course Name';
 $string['activityname'] = 'Activity Name';
